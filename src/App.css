@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+    font-size: 16px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* css variables */
+:root{
+    --primary: #fff;
+    --secondary:#acacac;
+    --dark:#000;
+    --red:#E50914;
+}
+
+body{
+    background-color:var(--dark) ;
+    color: var(--secondary);
+    overflow-x: hidden;
+}
+
+ol,ul{
+    list-style: none;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
   }
+  
+
+
+/* navabar */
+.nav{
+    background-color: var(--dark);
+}
+nav .navbar-brand{
+    width: 110px;
+    height: 50px;
+}
+nav .navbar-brand img{
+    width: 100%;
+    height: 100%;
+}
+.navbar-nav .nav-item{
+    margin-left: 20px;
+    color: var(--secondary) !important;
+}
+.navbar-nav .nav-item .nav-link{
+    color: var(--secondary) !important;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color: var(--primary) !important;
+}
+.navbar-toggler{
+    color: var(--primary) !important;
+    box-shadow: none;
+}
+.navbar-toggler:focus{
+    color: var(--primary) !important;
+    box-shadow: none;
+}
+.nav_icons{
+    color: var(--primary);
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Movie List */
+.listContainer .title{
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 500;
+}
+.movieWrapper{
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding:20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Movie List Item */
+.movieContainer{
+   width: 240px;
+    flex-shrink: 0;
+    margin:0 20px;
+    cursor: pointer;
+    transition: transform 450ms;
+}
+.movieContainer:hover{
+    transform:scale(1.20);
+    opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movieImageContainer{
+    width: 100%;
+    height: 140px;
+    background-color: #fff;
+    
+}
+.movieImage{
+    width: 100%;
+   height: 100%;
+    align-self: center;
+    margin-right: 30px;
+}
+
+.infoContainer{
+    width: 100%;
+}
+.movieContainer .infoContainer p{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+
+/* Movie Detail page*/
+.movieDetail{
+    width: 100vw;
+    height:90vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.detailContainer{
+    height: 90vh;
+    color: var(--primary);
+}
+.detailTop h1{
+    font-weight: 700;
+}
+.detailTop h4 span,.detailCenter{
+    color: var(--secondary);
+}
+.detailBottom .btn{
+    background-color: var(--red);
+    border: none;
+    color: var(--primary);
+    font-weight: 500;
+}
+.detailBottom .btn:hover{
+    background-color: var(--red);
+}
+.detailBottom .btn:focus{
+   box-shadow: none;
+}
+
+/* small to extra small size */
+@media (max-width:576px){
+    .detailTop h1{
+        font-weight: 600;
+    }
+    .detailTop h4{
+        font-size: 18px;
+    }
+    .detailTop h4 span,.detailCenter{
+        color: var(--primary);
+    }
 }
